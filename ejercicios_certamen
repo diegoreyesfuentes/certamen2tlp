@@ -1,0 +1,42 @@
+namespace Certamen2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[5];
+            int[] mayor = new int[5];
+            int num = 0;
+            Console.WriteLine("Ingrese 5 numeros: ");
+            int valor = 0;
+
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+                if (arr[i] > mayor[i])
+                {
+                    mayor[i] = arr[i];
+                }
+            }
+
+            Console.WriteLine("Ingrese un valor adicional: ");
+            valor = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Valor: " + valor);
+
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > valor)
+
+                {
+                    Console.WriteLine("Resultado: " + mayor[i]);
+                }
+            }                        
+            
+            Console.ReadKey();
+
+        }
+    }
+}
