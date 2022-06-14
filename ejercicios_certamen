@@ -9,6 +9,17 @@ namespace Certamen2
             int num = 0;
             Console.WriteLine("Ingrese 5 numeros: ");
             int valor = 0;
+            
+            string[,] matriz = new string[8, 8];
+            
+            
+            var random = new Random();
+            int[] vector = new int[10];
+            int posicion_valor_mayor = 0;
+            int posicion_valor_menor = 0;
+            
+            
+            
 
 
             for (int i = 0; i < arr.Length; i++)
@@ -33,10 +44,48 @@ namespace Certamen2
                 {
                     Console.WriteLine("Resultado: " + mayor[i]);
                 }
-            }                        
+            }
+            
+            
+            
+            
+            for (int i = 0; i < vector.Length; i++)
+            {
+                vector[i] = random.Next(50, 200);
+                
+            }
+
+
+            ImprimeVector(vector);
+            Console.WriteLine();
+            Console.WriteLine("El numero mayor es:" + vector.Max());
+            Console.WriteLine("El numero menor es:" + vector.Min());
             
             Console.ReadKey();
 
         }
+        
+        static void imprimir(string[,] matriz)
+        {
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz.GetLength(0); j++)
+                {
+                    Console.Write(matriz[i,j]+"");
+                }
+                Console.WriteLine();
+            }
+        }
+    
+    
+    static void ImprimeVector(int[] vector)
+        {
+            for (int i = 0; i < vector.Length; i++)
+            {
+                Console.Write(vector[i] + " ");
+            }
+        }
     }
 }
+
+
